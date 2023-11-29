@@ -7,11 +7,15 @@ export const Container = styled.div`
   gap: 10px;
   width: 100%;
 
+  img {
+    width: 43px;
+  }
+
   h1 {
     font-family: "Roboto", sans-serif;
     color: var(--light-100);
-    font-size: 24px;
     font-weight: 700;
+    font-size: 38px;
   }
 
   span {

@@ -7,12 +7,17 @@ import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { TextButton } from "../../components/TextButton"
 
-export function SignIn() {
+export function SignUp() {
   return (
     <Container>
       <div className="logo-wrapper">
         <Logo />
       </div>
+      <Input
+        label="Seu nome"
+        type="text"
+        placeholder="Exemplo: Maria da Silva"
+      />
       <Input
         label="Email"
         type="text"
@@ -23,8 +28,8 @@ export function SignIn() {
         type="password"
         placeholder="No mínimo 6 caracteres"
       />
-      <Button text="Entrar" />
-      <TextButton text="Criar uma conta" />
+      <Button text="Criar conta" />
+      <TextButton text="Já tenho uma conta" />
     </Container>
   )
 }
