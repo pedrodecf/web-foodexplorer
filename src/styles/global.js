@@ -8,6 +8,7 @@ export default createGlobalStyle`
         --light-400: #C4C4CC;
         --light-500: #7C7C8A;
         --cake: #065E7C;
+        --cake-200: #82F3FF;
         --tomato: #750310;
     }    
     
@@ -18,6 +19,7 @@ export default createGlobalStyle`
     }
 
     body {
-        background-color: red;
+        background-color: var(--dark-400);
+        color: var(--light-100);
     }
     `
