@@ -22,4 +22,21 @@ export default createGlobalStyle`
         background-color: var(--dark-400);
         color: var(--light-100);
     }
+
+    a {
+        text-decoration: none;
+    }
+
+    button, a {
+        cursor: pointer;
+        transition: filter 0.2s;
+    }
+
+    button:hover, a:hover {
+        filter: brightness(0.9);
+    }    
+
+    textarea:focus, input:focus{
+    outline: none;
+}    
     `
