@@ -13,18 +13,21 @@ export function SignIn() {
       <div className="logo-wrapper">
         <Logo />
       </div>
-      <Input
-        label="Email"
-        type="text"
-        placeholder="Exemplo: exemplo@exemplo.com.br"
-      />
-      <Input
-        label="Senha"
-        type="password"
-        placeholder="No mínimo 6 caracteres"
-      />
-      <Button text="Entrar" />
-      <TextButton text="Criar uma conta" />
+      <div className="info-wrapper">
+        <h2>Faça Login</h2>
+        <Input
+          label="Email"
+          type="text"
+          placeholder="Exemplo: exemplo@exemplo.com.br"
+        />
+        <Input
+          label="Senha"
+          type="password"
+          placeholder="No mínimo 6 caracteres"
+        />
+        <Button text="Entrar" />
+        <TextButton text="Criar uma conta" />
+      </div>
     </Container>
   )
 }

@@ -13,23 +13,26 @@ export function SignUp() {
       <div className="logo-wrapper">
         <Logo />
       </div>
-      <Input
-        label="Seu nome"
-        type="text"
-        placeholder="Exemplo: Maria da Silva"
-      />
-      <Input
-        label="Email"
-        type="text"
-        placeholder="Exemplo: exemplo@exemplo.com.br"
-      />
-      <Input
-        label="Senha"
-        type="password"
-        placeholder="No mínimo 6 caracteres"
-      />
-      <Button text="Criar conta" />
-      <TextButton text="Já tenho uma conta" />
+      <div className="info-wrapper">
+        <h2>Crie sua conta</h2>
+        <Input
+          label="Seu nome"
+          type="text"
+          placeholder="Exemplo: Maria da Silva"
+        />
+        <Input
+          label="Email"
+          type="text"
+          placeholder="Exemplo: exemplo@exemplo.com.br"
+        />
+        <Input
+          label="Senha"
+          type="password"
+          placeholder="No mínimo 6 caracteres"
+        />
+        <Button text="Criar conta" />
+        <TextButton text="Já tenho uma conta" />
+      </div>
     </Container>
   )
 }

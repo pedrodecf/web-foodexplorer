@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components"
 export default createGlobalStyle`
     :root {
         --dark-400: #000A0F;
+        --dark-700: #001119;
         --dark-900: #0D1D25;
         --light-100: #FFFFFF;
         --light-400: #C4C4CC;
@@ -10,6 +11,12 @@ export default createGlobalStyle`
         --cake: #065E7C;
         --cake-200: #82F3FF;
         --tomato: #750310;
+
+        --tablet-max-width: 840px;
+        --desktop-max-width: 1248px;
+
+        --mobile-padding: 0 24px;
+        --desktop-padding: 0 36px
     }    
     
     * {
