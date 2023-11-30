@@ -4,18 +4,19 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  width: 100%;
+  width: auto;
 
   img {
     width: 43px;
   }
 
-  h1 {
+  .logo-text {
     font-family: "Roboto", sans-serif;
     color: var(--light-100);
     font-weight: 700;
     font-size: 38px;
+    display: inline;
+    white-space: nowrap;
   }
 
   span {

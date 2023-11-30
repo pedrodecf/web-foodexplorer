@@ -7,6 +7,10 @@ export const Container = styled.button`
   border: none;
   border-radius: 5px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;

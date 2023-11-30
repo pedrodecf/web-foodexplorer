@@ -4,9 +4,9 @@ import IconLogo from "../../../public/icon-logo.svg"
 export function Logo({ $isadmin }) {
   return (
     <Container $isadmin={$isadmin}>
-      <img src={IconLogo} />
-      <h1>food explorer</h1>
-      {$isadmin ? <span>admin</span> : "" }
+      <img className="logo-img" src={IconLogo} />
+      <p className="logo-text">food explorer</p>
+      {$isadmin ? <span>admin</span> : ""}
     </Container>
   )
 }
