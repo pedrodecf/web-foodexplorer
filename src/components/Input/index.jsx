@@ -1,10 +1,10 @@
 import { Container } from "./style"
 
-export function Input({ label, ...rest }) {
+export function Input({ label, icon, ...rest }) {
   return (
     <Container>
-      <label>{label}</label>
-      <input {...rest} />
+      <label className="label-input">{label}</label>
+      <input {...rest}></input>
     </Container>
   )
 }

@@ -19,7 +19,7 @@ export const Container = styled.div`
   > input {
     margin-left: 12px;
     color: var(--white);
-    font-size: 1.4rem;
+    font-size: 14px;
     font-weight: 400;
     background: none;
     border: none;

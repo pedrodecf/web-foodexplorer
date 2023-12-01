@@ -40,16 +40,21 @@ export function MenuItem({
         {favorited ? <FaHeart /> : <FaRegHeart />}
       </div>
       <img src={img} alt={name} />
-      <div className="name-item">
-        <h1>{name} &gt;</h1>
+      <div className="name-item details">
+        <h1>{name}</h1>
+      </div>
+      <div className="description-item">
+        <h2>{description}</h2>
       </div>
       <span>{price}</span>
-      <div className="counter">
-        <LuMinus className="counter-btn" onClick={handleRemoveAmount} />
-        <p>{amount}</p>
-        <LuPlus className="counter-btn" onClick={handleAddAmount} />
+      <div className="counter-and-btn">
+        <div className="counter">
+          <LuMinus className="counter-btn" onClick={handleRemoveAmount} />
+          <p>{amount}</p>
+          <LuPlus className="counter-btn" onClick={handleAddAmount} />
+        </div>
+        <Button text="incluir" />
       </div>
-      <Button text="incluir" />
     </Container>
   )
 }

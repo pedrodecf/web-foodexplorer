@@ -2,8 +2,10 @@ import { Container } from "./style"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination } from "swiper/modules"
+import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
+import "swiper/css/navigation"
 
 import { Header } from "../../components/Header"
 import { MenuItem } from "../../components/MenuItem"
@@ -26,7 +28,7 @@ export function Home() {
       <main>
         <div className="slogan">
           <div className="img-slogan-container">
-            <img src={HomeImg}/>
+            <img src={HomeImg} />
           </div>
           <div className="text-slogan-container">
             <h2>Sabores inigualáveis</h2>
@@ -35,18 +37,44 @@ export function Home() {
         </div>
         <div className="cardapio">
           <div className="refeicoes">
-            <h3>Refeições</h3>
+            <h3 className="category-cardapio">Refeições</h3>
             <Swiper
               slidesPerView={2}
               spaceBetween={6}
-              modules={[Pagination]}
+              navigation={true}
+              breakpoints={{
+                576: {
+                  slidesPerView: 3,
+                  spaceBetween: 6,
+                },
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 6,
+                },
+              }}
+              modules={[Navigation]}
               className="mySwiper"
             >
               <SwiperSlide>
                 <MenuItem
                   img={Item01}
                   name="Salada Ravanello"
+                  description="Presunto de parma e rúcula em um pão com fermentação natural."
                   price="R$ 49,97"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <MenuItem
+                  img={Item03}
+                  name="Spaguetti Gambe"
+                  price="R$ 79,97"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <MenuItem
+                  img={Item03}
+                  name="Spaguetti Gambe"
+                  price="R$ 79,97"
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -60,10 +88,20 @@ export function Home() {
             </Swiper>
           </div>
           <div className="sobremesas">
-            <h3>Sobremesas</h3>
+            <h3 className="category-cardapio">Sobremesas</h3>
             <Swiper
               slidesPerView={2}
               spaceBetween={6}
+              breakpoints={{
+                576: {
+                  slidesPerView: 3,
+                  spaceBetween: 6,
+                },
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 6,
+                },
+              }}
               modules={[Pagination]}
               className="mySwiper"
             >
@@ -77,10 +115,20 @@ export function Home() {
             </Swiper>
           </div>
           <div className="bebidas">
-            <h3>Bebidas</h3>
+            <h3 className="category-cardapio">Bebidas</h3>
             <Swiper
               slidesPerView={2}
               spaceBetween={6}
+              breakpoints={{
+                576: {
+                  slidesPerView: 3,
+                  spaceBetween: 6,
+                },
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 6,
+                },
+              }}
               modules={[Pagination]}
               className="mySwiper"
             >
@@ -98,8 +146,8 @@ export function Home() {
             </Swiper>
           </div>
         </div>
-      <Footer/>
       </main>
+      <Footer />
     </Container>
   )
 }

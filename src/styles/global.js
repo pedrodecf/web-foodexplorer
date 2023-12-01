@@ -26,7 +26,9 @@ export default createGlobalStyle`
         --mobile-padding: 0 24px;
         --desktop-padding: 0 36px;
 
-        font-size: 62.5%;
+        --swiper-navigation-size: 28px;
+        --swiper-theme-color: #FFFAF1;
+
     }    
     
     * {
@@ -38,19 +40,41 @@ export default createGlobalStyle`
     body {
         background-color: var(--dark-400);
         color: var(--light-100);
-        font-size: 1.6rem;
     }
 
     a {
         text-decoration: none;
     }
 
-    button, a {
+    .details {
+        h1 {
+            position: relative;
+            padding-bottom: 4px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 0;
+                bottom: 0;
+                left: 0;
+                background-color: var(--light-100);
+                transition: all 0.2s ease-out;
+      }
+
+            &:hover::after {
+                width: 100%;
+      }
+    }
+
+    }
+
+    button, a, .action {
         cursor: pointer;
         transition: filter 0.2s;
     }
 
-    button:hover, a:hover {
+    button:hover, a:hover, .action:hover {
         filter: brightness(0.9);
     }    
 
