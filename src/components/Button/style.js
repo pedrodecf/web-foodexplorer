@@ -17,4 +17,10 @@ export const Container = styled.button`
   font-weight: 500;
   line-height: 24px;
   color: var(--light-100);
+
+  svg {
+    width: 21px;
+    height: 21px;
+    margin-right: 6px;
+  }
 `

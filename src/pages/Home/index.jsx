@@ -6,10 +6,12 @@ import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
+import { useState } from "react"
 
 import { Header } from "../../components/Header"
 import { MenuItem } from "../../components/MenuItem"
 import { Footer } from "../../components/Footer"
+import { MenuMobile } from "../../components/MenuMobile"
 
 import HomeImg from "../../../public/home-img-mobile.png"
 
@@ -22,9 +24,11 @@ import Item09 from "../../../public/09.png"
 import Item10 from "../../../public/10.png"
 
 export function Home() {
+  const [menu, setMenu] = useState(false)
   return (
     <Container>
-      <Header />
+      {menu ? <MenuMobile setMenu={setMenu} /> : ""}
+      <Header setMenu={setMenu} />
       <main>
         <div className="slogan">
           <div className="img-slogan-container">
@@ -65,23 +69,34 @@ export function Home() {
               </SwiperSlide>
               <SwiperSlide>
                 <MenuItem
-                  img={Item03}
-                  name="Spaguetti Gambe"
-                  price="R$ 79,97"
+                  img={Item01}
+                  name="Salada Ravanello"
+                  description="Presunto de parma e rúcula em um pão com fermentação natural."
+                  price="R$ 49,97"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <MenuItem
-                  img={Item03}
-                  name="Spaguetti Gambe"
-                  price="R$ 79,97"
+                  img={Item01}
+                  name="Salada Ravanello"
+                  description="Presunto de parma e rúcula em um pão com fermentação natural."
+                  price="R$ 49,97"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <MenuItem
-                  img={Item03}
-                  name="Spaguetti Gambe"
-                  price="R$ 79,97"
+                  img={Item01}
+                  name="Salada Ravanello"
+                  description="Presunto de parma e rúcula em um pão com fermentação natural."
+                  price="R$ 49,97"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <MenuItem
+                  img={Item01}
+                  name="Salada Ravanello"
+                  description="Presunto de parma e rúcula em um pão com fermentação natural."
+                  price="R$ 49,97"
                 />
               </SwiperSlide>
               <SwiperSlide />

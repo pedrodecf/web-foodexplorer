@@ -8,6 +8,7 @@ export default createGlobalStyle`
         --dark-600: #00111A;
         --dark-700: #001119;
         --dark-900: #0D1D25;
+        --dark-1000: #192227;
         --light-100: #FFFFFF;
         --light-200: #FFFAF1;
         --light-300: #E1E1E6;
@@ -46,28 +47,7 @@ export default createGlobalStyle`
         text-decoration: none;
     }
 
-    .details {
-        h1 {
-            position: relative;
-            padding-bottom: 4px;
 
-            &::after {
-                content: "";
-                position: absolute;
-                height: 1px;
-                width: 0;
-                bottom: 0;
-                left: 0;
-                background-color: var(--light-100);
-                transition: all 0.2s ease-out;
-      }
-
-            &:hover::after {
-                width: 100%;
-      }
-    }
-
-    }
 
     button, a, .action {
         cursor: pointer;

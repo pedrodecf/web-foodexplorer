@@ -7,7 +7,7 @@ import { PiReceipt, PiList } from "react-icons/pi"
 import { LuLogOut, LuSearch } from "react-icons/lu"
 import { useState } from "react"
 
-export function Header(props) {
+export function HeaderAdmin(props) {
   function handleOpenMenu() {
     props.setMenu(true)
   }
@@ -19,7 +19,7 @@ export function Header(props) {
           <PiList onClick={handleOpenMenu} />
         </div>
         <div className="logo-header">
-          <Logo />
+          <Logo $isadmin/>
         </div>
         <div className="search-header">
           <SearchBar
@@ -27,14 +27,8 @@ export function Header(props) {
             placeholder="Busque por pratos ou ingredientes"
           />
         </div>
-        <div className="orders-header action">
-          <PiReceipt />
-          <span className="orders-text-desktop">Sacola</span>
-          <div className="orders-counter">
-            <span className="parentheses-only-desktop">&#40;</span>
-            <span>0</span>
-            <span className="parentheses-only-desktop">&#41;</span>
-          </div>
+        <div className="orders-header action" onClick={() => navigate ("/new")}>
+          <span className="orders-text-desktop">Novo Prato</span>
         </div>
         <div className="logout-desktop">
           <LuLogOut />

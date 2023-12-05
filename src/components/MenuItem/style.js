@@ -40,7 +40,9 @@ export const Container = styled.div`
     display: none;
   }
 
-  h1 {
+  h1,
+  a {
+    color: var(--light-200);
     font-family: Poppins;
     font-size: 14px;
     font-weight: 500;
@@ -81,7 +83,8 @@ export const Container = styled.div`
     max-width: 250px;
     height: 360px;
 
-    h1 {
+    h1,
+    a {
       font-size: 18px;
     }
 
@@ -110,6 +113,28 @@ export const Container = styled.div`
     .counter-and-btn {
       margin-top: 12px;
       flex-direction: row;
+    }
+  }
+
+  .details {
+    h1 {
+      position: relative;
+      padding-bottom: 4px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--light-100);
+        transition: all 0.2s ease-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
 `

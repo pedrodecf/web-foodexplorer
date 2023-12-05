@@ -7,21 +7,25 @@ export const Container = styled.footer`
   main {
     height: 77px;
     padding: 24px;
+    max-width: var(--desktop-max-width);
+    margin: 0 auto;
     margin-top: 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    .logo-img,
-    .logo-text {
-      height: 18px;
-      font-size: 16px;
-      filter: grayscale(100%);
-      color: var(--light-700);
-    }
+    .logo-container {
+      .logo-img,
+      .logo-text {
+        height: 18px;
+        font-size: 16px;
+        filter: grayscale(100%);
+        color: var(--light-700);
+      }
 
-    .logo-text {
-      margin-left: -8px;
+      .logo-text {
+        margin-left: -8px;
+      }
     }
 
     p {
@@ -43,6 +47,10 @@ export const Container = styled.footer`
       flex-direction: column;
       padding: 12px 24px;
       justify-content: center;
+      width: 100%;
     }
+  }
+
+  @media (min-width: 992px) {
   }
 `

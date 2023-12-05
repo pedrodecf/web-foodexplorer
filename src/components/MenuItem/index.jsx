@@ -1,10 +1,10 @@
 import { Container } from "./style"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 import { Button } from "../Button"
 import { LuPlus, LuMinus } from "react-icons/lu"
 import { FaHeart, FaRegHeart } from "react-icons/fa6"
-
 
 export function MenuItem({
   img,
@@ -17,13 +17,12 @@ export function MenuItem({
   const [amount, setAmount] = useState(1)
   const [favorited, setFavorited] = useState(false)
 
-  function handleFavorite(){
+  function handleFavorite() {
     setFavorited(!favorited)
   }
-  
 
   function handleRemoveAmount() {
-    if (amount > 0) {
+    if (amount > 1) {
       setAmount(amount - 1)
       return amount
     }
@@ -41,7 +40,9 @@ export function MenuItem({
       </div>
       <img src={img} alt={name} />
       <div className="name-item details">
-        <h1>{name}</h1>
+        <Link to={"/view/:id"}>
+          <h1>{name}</h1>
+        </Link>
       </div>
       <div className="description-item">
         <h2>{description}</h2>

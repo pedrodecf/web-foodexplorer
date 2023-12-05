@@ -113,13 +113,6 @@ export const Container = styled.header`
           color: var(--light-100);
           display: block;
         }
-
-        .orders-counter {
-          color: var(--light-100);
-          position: relative;
-          top: 0;
-          left: 0;
-        }
       }
 
       .logout-desktop {
