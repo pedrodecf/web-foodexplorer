@@ -9,20 +9,28 @@ export const Container = styled.div`
   justify-content: center;
   gap: 32px;
 
-  .info-wrapper {
-    h2 {
-      display: none;
+  .logo-wrapper {
+    margin-bottom: 41px;
+
+    .logo-container {
+      img {
+        width: 36px;
+        margin-right: 14px;
+      }
     }
+  }
+
+  .info-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 32px;
     width: 100%;
-  }
 
-  .logo-wrapper {
-    margin-bottom: 41px;
+    h2 {
+      display: none;
+    }
   }
 
   @media (min-width: 576px) {
@@ -69,10 +77,6 @@ export const Container = styled.div`
 
     .logo-wrapper {
       margin-bottom: 0px;
-
-      img {
-        margin-right: 14px;
-      }
     }
   }
 `
