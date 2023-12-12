@@ -170,6 +170,7 @@ export function Edit() {
           <Textarea
             label="Descrição"
             placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+            value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           <div className="form-btn">

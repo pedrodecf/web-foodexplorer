@@ -26,6 +26,10 @@ export function Search() {
     navigate(`/view/${id}`)
   }
 
+  function handleEdit(id) {
+    navigate(`/edit/${id}`)
+  }
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     setQuery(params.toString())
@@ -56,6 +60,7 @@ export function Search() {
                 description={item.description}
                 price={item.price}
                 onClick={() => handleView(item.id)}
+                onClick2={() => handleEdit(item.id)}
               />
             ))
           ) : (
