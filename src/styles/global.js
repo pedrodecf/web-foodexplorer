@@ -63,6 +63,20 @@ export default createGlobalStyle`
     }    
 
     textarea:focus, input:focus, select:focus{
-    outline: none;
-}    
+        outline: none;
+    }    
+
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-clear-button {
+        -webkit-appearance: none;
+        appearance: none;
+        display: none;
+    }
+  
+  
+    input[type="search"] {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
     `
