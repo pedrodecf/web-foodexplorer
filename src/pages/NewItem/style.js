@@ -55,7 +55,6 @@ export const Container = styled.div`
   }
 
   @media (min-width: 992px) {
-    
     form {
       a {
         font-size: 24px;
@@ -105,7 +104,7 @@ export const Container = styled.div`
       position: fixed;
       bottom: 0;
 
-      main {
+      .footer-container {
         margin-top: 0px;
       }
     }

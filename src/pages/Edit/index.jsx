@@ -75,6 +75,14 @@ export function Edit() {
     navigate(`/view/${params.id}`)
   }
 
+  async function deleteItem() {
+    const confirm = window.confirm("Deseja excluir este prato?")
+    if (confirm) {
+      await api.delete(`/items/${params.id}`)
+      navigate("/")
+    }
+  }
+
   useEffect(() => {
     async function fetchItem() {
       const response = await api.get(`/items/${params.id}`)
@@ -165,7 +173,7 @@ export function Edit() {
             onChange={(e) => setDescription(e.target.value)}
           />
           <div className="form-btn">
-            <Button type="button" text="Excluir prato" />
+            <Button type="button" text="Excluir prato" onClick={deleteItem} />
             <Button
               type="button"
               text="Salvar alterações"

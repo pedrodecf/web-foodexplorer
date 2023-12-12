@@ -26,6 +26,11 @@ export function Header(props) {
     navigate(`/search/?search=${searched}`)
   }
 
+  function handleSignOut() {
+    signOut()
+    navigate("/")
+  }
+
   return (
     <Container>
       <div className="header-container">
@@ -54,7 +59,7 @@ export function Header(props) {
           </div>
         </div>
         <div className="logout-desktop">
-          <LuLogOut onClick={signOut} />
+          <LuLogOut onClick={handleSignOut} />
         </div>
       </div>
     </Container>

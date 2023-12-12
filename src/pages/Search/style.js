@@ -32,7 +32,7 @@ export const Container = styled.div`
     position: fixed;
     bottom: 0;
 
-    main {
+    .footer-container {
       margin-top: 0;
     }
   }

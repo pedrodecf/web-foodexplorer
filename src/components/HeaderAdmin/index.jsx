@@ -11,11 +11,24 @@ import { LuLogOut, LuSearch } from "react-icons/lu"
 //
 import { useState } from "react"
 import { useAuth } from "../../hooks/auth"
+import { useNavigate } from "react-router-dom"
 
 export function HeaderAdmin(props) {
   const { signOut } = useAuth()
+  const [searched, setSearched] = useState("")
+  const navigate = useNavigate()
+
   function handleOpenMenu() {
     props.setMenu(true)
+  }
+
+  function handleSubmit() {
+    navigate(`/search/?search=${searched}`)
+  }
+
+  function handleSignOut() {
+    signOut()
+    navigate("/")
   }
 
   return (
@@ -30,14 +43,17 @@ export function HeaderAdmin(props) {
         <div className="search-header">
           <SearchBar
             icon={<LuSearch />}
+            type="search"
             placeholder="Busque por pratos ou ingredientes"
+            onChange={(e) => setSearched(e.target.value)}
+            onClick={handleSubmit}
           />
         </div>
         <div className="orders-header action" onClick={() => navigate("/new")}>
           <span className="orders-text-desktop">Novo Prato</span>
         </div>
         <div className="logout-desktop">
-          <LuLogOut onClick={signOut} />
+          <LuLogOut onClick={handleSignOut} />
         </div>
       </div>
     </Container>

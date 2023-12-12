@@ -8,15 +8,16 @@ export function AuthProvider({ children }) {
 
   async function signIn({ email, password }) {
     try {
-      const res = await api.post("/sessions", { email, password })
-      const { user, token } = res.data
+      const res = await api.post(
+        "/sessions",
+        { email, password },
+        { withCredentials: true }
+      )
+      const { user } = res.data
 
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user))
-      localStorage.setItem("@foodexplorer:token", token)
 
-      api.defaults.headers.common["Authorization"] = `Bearer ${token}`
-
-      setData({ user, token })
+      setData({ user })
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
@@ -27,30 +28,22 @@ export function AuthProvider({ children }) {
   }
 
   function signOut() {
-    const token = localStorage.removeItem("@foodexplorer:token")
     const user = localStorage.removeItem("@foodexplorer:user")
-
     setData({})
   }
 
   useEffect(() => {
-    const token = localStorage.getItem("@foodexplorer:token")
     const user = localStorage.getItem("@foodexplorer:user")
 
-    if (token && user) {
-      api.defaults.headers.common["Authorization"] = `Bearer ${token}`
-
+    if (user) {
       setData({
-        token,
         user: JSON.parse(user),
       })
     }
   }, [])
 
   return (
-    <AuthContext.Provider
-      value={{ signIn, signOut, user: data.user }}
-    >
+    <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
       {children}
     </AuthContext.Provider>
   )

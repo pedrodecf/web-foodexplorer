@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-  height: 100vh;
   .voltar-btn {
     a {
       padding: 24px 48px 0;
@@ -22,7 +21,7 @@ export const Container = styled.div`
     position: fixed;
     bottom: 0;
 
-    main {
+    .footer-container {
       margin-top: 0;
     }
   }
@@ -42,6 +41,7 @@ export const Container = styled.div`
       max-width: var(--desktop-max-width);
       padding: 24px;
       margin: 0 auto;
+      margin-bottom: 100px;
       display: flex;
       align-items: start;
 

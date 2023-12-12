@@ -27,6 +27,7 @@ export function SignIn() {
         <Logo />
       </div>
       <div className="info-wrapper">
+  
         <h2>Faça Login</h2>
         <Input
           label="Email"

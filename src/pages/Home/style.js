@@ -2,8 +2,11 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   background-color: var(--dark-640);
+  height: 100%;
 
   main {
+    margin-bottom: 100px;
+
     .slogan {
       height: 120px;
       background: var(--gradients-200);

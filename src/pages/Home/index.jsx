@@ -10,6 +10,7 @@ import "swiper/css/navigation"
 
 //
 import { Header } from "../../components/Header"
+import { HeaderAdmin } from "../../components/HeaderAdmin"
 import { MenuItem } from "../../components/MenuItem"
 import { Footer } from "../../components/Footer"
 import { MenuMobile } from "../../components/MenuMobile"
@@ -19,14 +20,21 @@ import HomeImg from "../../../public/home-img-mobile.png"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { api } from "../../../services/api"
+import { useAuth } from "../../hooks/auth"
+import { USER_ROLE } from "../../../utils/roles"
 
 export function Home() {
   const [menu, setMenu] = useState(false)
   const [allItems, setAllItems] = useState([])
   const navigate = useNavigate()
+  const { user } = useAuth()
 
   function handleView(id) {
     navigate(`/view/${id}`)
+  }
+
+  function handleEdit(id) {
+    navigate(`/edit/${id}`)
   }
 
   useEffect(() => {
@@ -39,16 +47,14 @@ export function Home() {
 
   return (
     <Container>
-      {menu ? (
-        <MenuMobile
-          setMenu={setMenu}
-        />
+      {menu ? <MenuMobile setMenu={setMenu} /> : ""}
+
+      {user.role === USER_ROLE.ADMIN ? (
+        <HeaderAdmin setMenu={setMenu} />
       ) : (
-        ""
+        <Header setMenu={setMenu} />
       )}
-      <Header
-        setMenu={setMenu}
-      />
+
       <main>
         <div className="slogan">
           <div className="img-slogan-container">
@@ -81,14 +87,15 @@ export function Home() {
             >
               {allItems.map((item) =>
                 item.category == "refeicoes" ? (
-                  <SwiperSlide>
+                  <SwiperSlide key={String(item.id)}>
                     <MenuItem
-                      key={item.id}
+                      key={String(item.id)}
                       img={`${api.defaults.baseURL}/files/${item.img}`}
                       name={item.name}
                       description={item.description}
                       price={item.price}
                       onClick={() => handleView(item.id)}
+                      onClick2={() => handleEdit(item.id)}
                     />
                   </SwiperSlide>
                 ) : (

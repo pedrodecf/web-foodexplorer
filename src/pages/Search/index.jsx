@@ -3,6 +3,7 @@ import { Container } from "./style"
 
 //
 import { Header } from "../../components/Header"
+import { HeaderAdmin } from "../../components/HeaderAdmin"
 import { MenuItem } from "../../components/MenuItem"
 import { Footer } from "../../components/Footer"
 import { MenuMobile } from "../../components/MenuMobile"
@@ -11,12 +12,15 @@ import { MenuMobile } from "../../components/MenuMobile"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { api } from "../../../services/api"
+import { useAuth } from "../../hooks/auth"
+import { USER_ROLE } from "../../../utils/roles"
 
 export function Search() {
   const navigate = useNavigate()
   const [menu, setMenu] = useState(false)
   const [query, setQuery] = useState("")
   const [itemsSearch, setItemsSearch] = useState([])
+  const { user } = useAuth()
 
   function handleView(id) {
     navigate(`/view/${id}`)
@@ -36,7 +40,11 @@ export function Search() {
   return (
     <Container>
       {menu ? <MenuMobile setMenu={setMenu} /> : ""}
-      <Header setMenu={setMenu} />
+      {user.role === USER_ROLE.ADMIN ? (
+        <HeaderAdmin setMenu={setMenu} />
+      ) : (
+        <Header setMenu={setMenu} />
+      )}
       {itemsSearch && (
         <div className="main-container">
           {itemsSearch.length > 0 ? (

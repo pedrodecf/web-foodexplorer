@@ -3,8 +3,9 @@ import styled from "styled-components"
 export const Container = styled.footer`
   width: 100%;
   background-color: var(--dark-600);
+  z-index: 999;
 
-  main {
+  .footer-container {
     height: 77px;
     padding: 24px;
     max-width: var(--desktop-max-width);
@@ -43,7 +44,7 @@ export const Container = styled.footer`
   }
 
   @media (max-width: 451px) {
-    main {
+    .footer-container {
       flex-direction: column;
       padding: 12px 24px;
       justify-content: center;
@@ -51,6 +52,4 @@ export const Container = styled.footer`
     }
   }
 
-  @media (min-width: 992px) {
-  }
 `

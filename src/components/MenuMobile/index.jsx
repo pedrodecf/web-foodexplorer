@@ -11,10 +11,11 @@ import { LuSearch, LuX } from "react-icons/lu"
 import { useAuth } from "../../hooks/auth"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { USER_ROLE } from "../../../utils/roles"
 
 export function MenuMobile(props) {
   const navigate = useNavigate()
-  const { signOut } = useAuth()
+  const { user, signOut } = useAuth()
   const [searched, setSearched] = useState("")
 
   function handleSubmit() {
@@ -23,6 +24,16 @@ export function MenuMobile(props) {
   }
 
   function handleCloseMenu() {
+    props.setMenu(false)
+  }
+
+  function handleSignOut() {
+    signOut()
+    navigate("/")
+  }
+
+  function handleNewItem() {
+    navigate("/new")
     props.setMenu(false)
   }
 
@@ -42,8 +53,13 @@ export function MenuMobile(props) {
         />
 
         <div className="opcoes-menu">
-          <TextButton text="Sair" onClick={signOut} />
+          <TextButton text="Sair" onClick={handleSignOut} />
         </div>
+        {user.role === USER_ROLE.ADMIN && (
+          <div className="opcoes-menu">
+            <TextButton text="Novo Prato" onClick={() => handleNewItem()} />
+          </div>
+        )}
       </main>
       <Footer />
     </Container>

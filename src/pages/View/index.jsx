@@ -4,6 +4,7 @@ import { Container, ItemV, Tag } from "./style"
 //
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
+import { HeaderAdmin } from "../../components/HeaderAdmin"
 import { TextButton } from "../../components/TextButton"
 import { Button } from "../../components/Button"
 import { IoIosArrowBack } from "react-icons/io"
@@ -15,6 +16,8 @@ import { PiReceipt } from "react-icons/pi"
 import { useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { api } from "../../../services/api"
+import { useAuth } from "../../hooks/auth"
+import { USER_ROLE } from "../../../utils/roles"
 
 export function View() {
   const navigate = useNavigate()
@@ -26,6 +29,8 @@ export function View() {
 
   const [amount, setAmount] = useState(1)
 
+  const { user } = useAuth()
+
   function handleRemoveAmount() {
     if (amount > 1) {
       setAmount(amount - 1)
@@ -36,6 +41,10 @@ export function View() {
   function handleAddAmount() {
     setAmount(amount + 1)
     return amount
+  }
+
+  function handleEdit(){
+    navigate(`/edit/${data.id}`)
   }
 
   useEffect(() => {
@@ -51,7 +60,11 @@ export function View() {
   return (
     <Container>
       {menu ? <MenuMobile setMenu={setMenu} /> : ""}
-      <Header setMenu={setMenu} />
+      {user.role === USER_ROLE.ADMIN ? (
+        <HeaderAdmin setMenu={setMenu} />
+      ) : (
+        <Header setMenu={setMenu} />
+      )}
 
       <div className="voltar-btn">
         <TextButton
@@ -81,17 +94,26 @@ export function View() {
                     </Tag>
                   ))}
               </div>
-              <div className="counter-and-btn">
-                <div className="counter">
-                  <LuMinus
-                    className="counter-btn"
-                    onClick={handleRemoveAmount}
+              {user.role === USER_ROLE.CUSTOMER ? (
+                <div className="counter-and-btn">
+                  <div className="counter">
+                    <LuMinus
+                      className="counter-btn"
+                      onClick={handleRemoveAmount}
+                    />
+                    <p>0{amount}</p>
+                    <LuPlus className="counter-btn" onClick={handleAddAmount} />
+                  </div>
+                  <Button
+                    icon={<PiReceipt />}
+                    text={`pedir • R$${data.price}`}
                   />
-                  <p>0{amount}</p>
-                  <LuPlus className="counter-btn" onClick={handleAddAmount} />
                 </div>
-                <Button icon={<PiReceipt />} text={`pedir • R$${data.price}`} />
-              </div>
+              ) : (
+                <div className="counter-and-btn">
+                  <Button text={"Editar prato"} onClick={handleEdit} />
+                </div>
+              )}
             </div>
           </ItemV>
         )}

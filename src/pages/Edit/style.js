@@ -54,7 +54,7 @@ export const Container = styled.div`
     display: flex;
     gap: 8px;
     margin-top: 32px;
-    
+
     :first-child {
       background-color: var(--dark-800);
     }
@@ -62,6 +62,15 @@ export const Container = styled.div`
     button {
       padding: 12px;
       font-size: 14px;
+    }
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+
+    .footer-container {
+      margin-top: 0px;
     }
   }
 
@@ -109,15 +118,6 @@ export const Container = styled.div`
 
     textarea {
       height: 172px;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-
-      main {
-        margin-top: 0px;
-      }
     }
   }
 `

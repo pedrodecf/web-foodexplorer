@@ -17,8 +17,8 @@ export const Container = styled.div`
 
   .favorite {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
     cursor: pointer;
 
     svg {

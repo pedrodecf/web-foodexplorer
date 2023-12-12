@@ -20,6 +20,8 @@ export default createGlobalStyle`
         --cake: #065E7C;
         --cake-200: #82F3FF;
         --tomato: #750310;
+        --orange: #febe40;
+        --hard-orange: #EC7523;
 
         --gradients-200: linear-gradient(180deg, #091E26 0%, #00131C 100%);
 
