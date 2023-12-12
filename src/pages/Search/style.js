@@ -29,9 +29,6 @@ export const Container = styled.div`
   }
 
   footer {
-    position: fixed;
-    bottom: 0;
-
     .footer-container {
       margin-top: 0;
     }

@@ -18,8 +18,6 @@ export const Container = styled.div`
   }
 
   footer {
-    position: fixed;
-    bottom: 0;
 
     .footer-container {
       margin-top: 0;
@@ -89,10 +87,7 @@ export const ItemV = styled.div`
         font-size: 27px;
         font-weight: 500;
         line-height: 24px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
+
       }
     }
 
