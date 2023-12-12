@@ -11,6 +11,7 @@ export function ItemView({
   description,
   price,
   ingredients,
+  data,
   ...rest
 }) {
   const [amount, setAmount] = useState(1)
@@ -39,12 +40,7 @@ export function ItemView({
           <h2>{description}</h2>
         </div>
         <div className="ingredientes">
-          <span>alface</span>
-          <span>cebola</span>
-          <span>pão naan</span>
-          <span>pepino</span>
-          <span>rabanete</span>
-          <span>tomate</span>
+          <span>{ingredients}</span>
         </div>
         <div className="counter-and-btn">
           <div className="counter">

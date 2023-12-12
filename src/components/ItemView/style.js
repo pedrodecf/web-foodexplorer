@@ -103,11 +103,13 @@ export const Container = styled.div`
 
   @media (min-width: 978px) {
     flex-direction: row;
-    margin-top: 48px;
+    margin-top: 36px;
 
     .img-container {
       img {
-        max-width: 600px;
+        width: 350px;
+        max-width: 350px;
+        margin-right: 12px;
       }
     }
 

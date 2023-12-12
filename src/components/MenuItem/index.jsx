@@ -12,6 +12,7 @@ export function MenuItem({
   description,
   price,
   ingredients,
+  onClick,
   ...rest
 }) {
   const [amount, setAmount] = useState(1)
@@ -39,15 +40,15 @@ export function MenuItem({
         {favorited ? <FaHeart /> : <FaRegHeart />}
       </div>
       <img src={img} alt={name} />
-      <div className="name-item details">
-        <Link to={"/view/:id"}>
+      <div className="name-item details" onClick={onClick}>
+        
           <h1>{name}</h1>
-        </Link>
+        
       </div>
       <div className="description-item">
         <h2>{description}</h2>
       </div>
-      <span>{price}</span>
+      <span>R${price}</span>
       <div className="counter-and-btn">
         <div className="counter">
           <LuMinus className="counter-btn" onClick={handleRemoveAmount} />

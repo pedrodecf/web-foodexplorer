@@ -1,9 +1,9 @@
 import { Container } from "./style"
 
-export function SearchBar({ icon, ...rest }) {
+export function SearchBar({ icon, onClick, ...rest }) {
   return (
     <Container>
-      {icon}
+      <button type="button" onClick={onClick}>{icon}</button>
       <input {...rest} />
     </Container>
   )

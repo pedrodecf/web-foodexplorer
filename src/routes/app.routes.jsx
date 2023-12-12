@@ -4,6 +4,7 @@ import { Home } from "../pages/Home"
 import { View } from "../pages/View"
 import { NewItem } from "../pages/NewItem"
 import { Edit } from "../pages/Edit"
+import { Search } from "../pages/Search"
 
 export function AppRoutes() {
   return (
@@ -12,6 +13,7 @@ export function AppRoutes() {
       <Route path="/view/:id" element={<View />} />
       <Route path="/new" element={<NewItem />} />
       <Route path="/edit/:id" element={<Edit />} />
+      <Route path="/search" element={<Search />} />
     </Routes>
   )
 }

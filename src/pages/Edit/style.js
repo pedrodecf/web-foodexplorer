@@ -43,7 +43,7 @@ export const Container = styled.div`
 
     .tags-container {
       display: grid;
-      height: 48px;
+      height: auto;
       grid-template-columns: 1fr 1fr;
       background-color: var(--dark-800);
       width: 100%;

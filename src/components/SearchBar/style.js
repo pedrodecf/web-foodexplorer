@@ -16,6 +16,14 @@ export const Container = styled.div`
   line-height: 24px;
   color: var(--light-500);
 
+  button {
+    background: none;
+    border: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+
   > input {
     margin-left: 12px;
     color: var(--white);
