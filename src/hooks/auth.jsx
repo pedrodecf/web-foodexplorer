@@ -8,11 +8,7 @@ export function AuthProvider({ children }) {
 
   async function signIn({ email, password }) {
     try {
-      const res = await api.post(
-        "/sessions",
-        { email, password },
-        { withCredentials: true }
-      )
+      const res = await api.post("/sessions", { email, password }, { withCredentials: true })
       const { user } = res.data
 
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user))
@@ -42,11 +38,7 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  return (
-    <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
-      {children}
-    </AuthContext.Provider>
-  )
+  return <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>{children}</AuthContext.Provider>
 }
 
 export function useAuth() {

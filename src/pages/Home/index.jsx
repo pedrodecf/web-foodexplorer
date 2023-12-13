@@ -49,11 +49,7 @@ export function Home() {
     <Container>
       {menu ? <MenuMobile setMenu={setMenu} /> : ""}
 
-      {user.role === USER_ROLE.ADMIN ? (
-        <HeaderAdmin setMenu={setMenu} />
-      ) : (
-        <Header setMenu={setMenu} />
-      )}
+      {user.role === USER_ROLE.ADMIN ? <HeaderAdmin setMenu={setMenu} /> : <Header setMenu={setMenu} />}
 
       <main>
         <div className="slogan">
@@ -126,14 +122,15 @@ export function Home() {
             >
               {allItems.map((item) =>
                 item.category == "sobremesas" ? (
-                  <SwiperSlide>
+                  <SwiperSlide key={String(item.id)}>
                     <MenuItem
-                      key={item.id}
+                      key={String(item.id)}
                       img={`${api.defaults.baseURL}/files/${item.img}`}
                       name={item.name}
                       description={item.description}
                       price={item.price}
                       onClick={() => handleView(item.id)}
+                      onClick2={() => handleEdit(item.id)}
                     />
                   </SwiperSlide>
                 ) : (
@@ -164,14 +161,15 @@ export function Home() {
             >
               {allItems.map((item) =>
                 item.category == "bebidas" ? (
-                  <SwiperSlide>
+                  <SwiperSlide key={String(item.id)}>
                     <MenuItem
-                      key={item.id}
+                      key={String(item.id)}
                       img={`${api.defaults.baseURL}/files/${item.img}`}
                       name={item.name}
                       description={item.description}
                       price={item.price}
                       onClick={() => handleView(item.id)}
+                      onClick2={() => handleEdit(item.id)}
                     />
                   </SwiperSlide>
                 ) : (
