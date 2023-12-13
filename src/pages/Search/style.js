@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   background-color: var(--dark-640);
+  height: 100vh;
 
   .main-container {
     margin: 16px auto;

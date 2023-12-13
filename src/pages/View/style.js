@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+  height: 100vh;
   .voltar-btn {
     a {
       padding: 24px 48px 0;
@@ -18,7 +19,6 @@ export const Container = styled.div`
   }
 
   footer {
-
     .footer-container {
       margin-top: 0;
     }
@@ -60,6 +60,7 @@ export const ItemV = styled.div`
   background-color: var(--dark-400);
   font-family: Roboto;
   position: relative;
+  
 
   .img-container {
     display: flex;
@@ -87,7 +88,7 @@ export const ItemV = styled.div`
         font-size: 27px;
         font-weight: 500;
         line-height: 24px;
-
+        text-align: center;
       }
     }
 

@@ -49,7 +49,7 @@ export function Search() {
       ) : (
         <Header setMenu={setMenu} />
       )}
-      {itemsSearch && (
+      {itemsSearch&& (
         <div className="main-container">
           {itemsSearch.length > 0 ? (
             itemsSearch.map((item) => (
