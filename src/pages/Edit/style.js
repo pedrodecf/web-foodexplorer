@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-height: 100vh;
+  height: 100vh;
+
   form {
     padding: 24px 48px 0;
     display: flex;
@@ -63,9 +64,10 @@ height: 100vh;
     button {
       padding: 12px;
       font-size: 14px;
+      margin-bottom: 20px;
     }
   }
-  
+
   footer {
     .footer-container {
       margin-top: 0px;
@@ -109,7 +111,6 @@ height: 100vh;
         button {
           width: 200px;
           height: 48px;
-          margin-bottom: 100px;
         }
       }
     }

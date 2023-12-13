@@ -46,8 +46,6 @@ export const Container = styled.footer`
   }
 
   @media (max-width: 451px) {
-
-
     .footer-container {
       flex-direction: column;
       padding: 12px 24px;
@@ -55,5 +53,4 @@ export const Container = styled.footer`
       width: 100%;
     }
   }
-
 `

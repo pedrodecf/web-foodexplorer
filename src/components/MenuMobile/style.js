@@ -9,12 +9,6 @@ export const Container = styled.div`
   position: fixed;
   z-index: 9999;
 
-  footer {
-    .footer-container {
-      margin-top: 0;
-      padding: 28px;
-    }
-  }
 
   .fechar-menu {
     padding: 64px 28px 32px;
