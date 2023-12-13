@@ -79,6 +79,7 @@ export function Edit() {
     const confirm = window.confirm("Deseja excluir este prato?")
     if (confirm) {
       await api.delete(`/items/${params.id}`)
+      alert("Prato excluído com sucesso.")
       navigate("/")
     }
   }

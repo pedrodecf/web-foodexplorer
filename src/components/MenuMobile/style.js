@@ -8,8 +8,13 @@ export const Container = styled.div`
   flex-direction: column;
   position: fixed;
   z-index: 9999;
-
-
+  footer {
+    position: fixed;
+    bottom: 0;
+    .footer-container {
+      margin-top: 0;
+    }
+  }
   .fechar-menu {
     padding: 64px 28px 32px;
     display: flex;
@@ -24,15 +29,12 @@ export const Container = styled.div`
       margin-right: 8px;
     }
   }
-
   main {
     height: 100%;
     padding: 28px 28px 0;
-
     .opcoes-menu {
       margin-top: 28px;
       border-bottom: 1px solid var(--dark-1000);
-
       a {
         color: var(--light-300);
         font-family: Poppins;
