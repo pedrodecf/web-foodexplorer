@@ -90,7 +90,6 @@ export const ItemV = styled.div`
         font-size: 27px;
         font-weight: 500;
         line-height: 24px;
-        text-align: center;
       }
     }
 
@@ -154,6 +153,7 @@ export const ItemV = styled.div`
         h1 {
           font-size: 40px;
           line-height: normal;
+          text-align: center;
         }
       }
 
