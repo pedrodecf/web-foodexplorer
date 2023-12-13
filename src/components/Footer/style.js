@@ -4,6 +4,8 @@ export const Container = styled.footer`
   width: 100%;
   background-color: var(--dark-600);
   z-index: 999;
+  position: relative;
+  bottom: 0;
 
   .footer-container {
     height: 77px;
@@ -44,6 +46,8 @@ export const Container = styled.footer`
   }
 
   @media (max-width: 451px) {
+
+
     .footer-container {
       flex-direction: column;
       padding: 12px 24px;

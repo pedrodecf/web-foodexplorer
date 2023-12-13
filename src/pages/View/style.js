@@ -34,6 +34,10 @@ export const Container = styled.div`
       }
     }
 
+    footer {
+      position: fixed;
+      bottom: 0;
+    }
     .view-container {
       height: max-content;
       max-width: var(--desktop-max-width);
@@ -59,8 +63,6 @@ export const ItemV = styled.div`
   padding: 12px 56px;
   background-color: var(--dark-400);
   font-family: Roboto;
-  position: relative;
-  
 
   .img-container {
     display: flex;
