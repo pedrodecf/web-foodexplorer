@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-  height: 100vh;
   form {
     padding: 24px 48px 0;
     display: flex;
@@ -52,7 +51,21 @@ export const Container = styled.div`
     }
   }
   .form-btn {
+    display: flex;
+    gap: 8px;
     margin-top: 32px;
+
+    button {
+      padding: 12px;
+      font-size: 14px;
+      margin-bottom: 77px;
+    }
+  }
+
+  footer {
+    .footer-container {
+      margin-top: 0px;
+    }
   }
 
   @media (min-width: 992px) {
@@ -92,19 +105,12 @@ export const Container = styled.div`
         button {
           width: 200px;
           height: 48px;
-          margin-bottom: 100px;
         }
       }
     }
 
     textarea {
       height: 172px;
-    }
-
-    footer {
-      .footer-container {
-        margin-top: 0px;
-      }
     }
   }
 `

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-  height: 100vh;
+
   .voltar-btn {
     a {
       padding: 24px 48px 0;

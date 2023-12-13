@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-  height: 100vh;
+
 
   form {
     padding: 24px 48px 0;
@@ -64,7 +64,7 @@ export const Container = styled.div`
     button {
       padding: 12px;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 77px;
     }
   }
 
