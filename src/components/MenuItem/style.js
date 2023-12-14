@@ -29,6 +29,7 @@ export const Container = styled.div`
 
   img {
     width: 60%;
+    cursor: pointer;
   }
 
   .name-item {
@@ -120,6 +121,7 @@ export const Container = styled.div`
     h1 {
       position: relative;
       padding-bottom: 4px;
+      line-height: 150%;
 
       &::after {
         content: "";

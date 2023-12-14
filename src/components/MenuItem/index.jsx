@@ -55,7 +55,7 @@ export function MenuItem({
           <FaPen />
         </div>
       )}
-      <img src={img} alt={name} />
+      <img src={img} alt={name} onClick={onClick} />
       <div className="name-item details" onClick={onClick}>
         <h1>{name}</h1>
       </div>

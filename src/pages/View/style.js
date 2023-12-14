@@ -89,6 +89,7 @@ export const ItemV = styled.div`
         font-size: 27px;
         font-weight: 500;
         line-height: 24px;
+        text-align: center;
       }
     }
 

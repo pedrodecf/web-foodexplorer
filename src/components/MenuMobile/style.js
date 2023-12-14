@@ -34,6 +34,7 @@ export const Container = styled.div`
     padding: 28px 28px 0;
     .opcoes-menu {
       margin-top: 28px;
+      padding-bottom: 6px;
       border-bottom: 1px solid var(--dark-1000);
       a {
         color: var(--light-300);
