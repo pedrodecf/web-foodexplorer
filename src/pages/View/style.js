@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-
   .voltar-btn {
     a {
       padding: 24px 48px 0;
@@ -162,6 +161,10 @@ export const ItemV = styled.div`
           font-size: 24px;
           text-align: start;
         }
+      }
+
+      .ingredientes {
+        justify-content: start;
       }
 
       .counter-and-btn {
