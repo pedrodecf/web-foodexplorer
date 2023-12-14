@@ -153,7 +153,7 @@ export const ItemV = styled.div`
         h1 {
           font-size: 40px;
           line-height: normal;
-          text-align: center;
+          text-align: start;
         }
       }
 
