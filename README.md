@@ -41,7 +41,7 @@ A aplicação está disponível para acesso através do seguinte link:
 [Link do Deploy](https://foodexplorer-pedrodecf.netlify.app)
 
 ## Visualizando o projeto
-Após instalar as dependências do projeto, você pode iniciar a aplicação com o seguindo código:
+Após instalar as dependências do projeto, você pode iniciar a aplicação com o seguinte código:
 
 ```
 npm run dev
